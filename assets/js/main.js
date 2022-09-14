@@ -23,7 +23,12 @@ const getData = async(num) => {
   return data;
 }
 
+const cleanData = () => {
+  dogContainer.innerHTML = "";
+}
+
 const mainFunction = () => {
+  cleanData();
   const value = input.value || 1;
   getData(value)
     .then(data => data.map( item => figure(item) ))
